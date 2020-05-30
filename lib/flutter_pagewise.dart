@@ -326,12 +326,7 @@ class PagewiseState<T> extends State<Pagewise<T>> {
   }
 
   Widget _getStandardContainer({Widget child}) {
-    return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
-        child: Align(
-          alignment: Alignment.topCenter,
-          child: child,
-        ));
+    return child;
   }
 }
 
