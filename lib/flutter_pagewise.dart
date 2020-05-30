@@ -514,6 +514,16 @@ class PagewiseLoadController<T> extends ChangeNotifier {
     if (foundIndex != -1) this._loadedItems[foundIndex] = newItem;
     this.notifyListeners();
   }
+
+  void removeItemsAfter(int index) {
+    this._loadedItems = this._loadedItems.sublist(0, index);
+    this.notifyListeners();
+  }
+
+  void removeItemsWhere(bool Function(T item) test) {
+    this._loadedItems.removeWhere(test);
+    this.notifyListeners();
+  }
 }
 
 class PagewiseListView<T> extends Pagewise<T> {
